@@ -5,7 +5,7 @@ by
  
 Title
 ------
-The Role of Heterogeneity In Long-Range Interacting Systems : From Nucleation to Earthquake Fault System
+The Role of Heterogeneity In Long-Range Interacting Systems : From Nucleation to Earthquake Fault Systems
 
 Addons
 ------
