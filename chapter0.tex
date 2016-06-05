@@ -1,0 +1,149 @@
+% !TEX root = jbsilvaThesis.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%setup commands for the bu thesis style file
+\title{The Role of Heterogeneity In Long-Range Interacting Systems : From Nucleation to Earthquake Fault Systems }
+
+\author{James Brian Silva}
+
+% Type of document prepared for this degree:
+%   1 = Master of Science thesis,
+%   2 = Doctor of Philisophy dissertation.
+%   3 = Master of Science thesis and Doctor of Philisophy dissertation.
+%   4 = Doctoral Dissertation Prospectus
+\degree=2
+
+%\prevdegrees{B.Sc, Your university, Year granted}
+
+\department{Department of Physics}
+
+\university{Boston University}
+
+\faculty{Graduate School of Arts and Sciences}
+
+% Degree year is the year the diploma is expected, and defense year is
+% the year the dissertation is written up and defended. Often, these
+% will be the same, except for January graduation, when your defense
+% will be in the fall of year X, and your graduation will be in
+% January of year X+1
+\defenseyear{2016}
+\degreeyear{2016}
+
+% For each reader, specify appropriate label {First, second, third},
+% then name, then title. Warning: If you have more than five readers
+% you are out of luck, because it will overflow to a new page.
+% Sometimes you may wish to put part of the title in with the name
+\reader{First}{William Klein, Ph.D.}{Professor of Physics}
+\reader{Second}{Pankaj Mehta, Ph.D.}{Assistant Professor of Physics}
+
+% The Major Professor is the same as the first reader, but must be
+% specified again for the abstract page
+\majorprof{William Klein}{Professor of Physics}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% other set up commands which are a good idea
+
+%the bottom margins should be ``as close as possible'' to 1 inch, so 
+%allowdisplaybreaks is a good idea for theses with a lot of equations
+\allowdisplaybreaks
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                       PRELIMINARY PAGES
+% According to the BU guide the preliminary pages consist of:
+% title, copyright (optional), approval,  acknowledgments (opt.),
+% abstract, preface (opt.), Table of contents, List of tables (if
+% any), List of illustrations (if any). The \tableofcontents,
+% \listoffigures, and \listoftables commands can be used in the
+% appropriate places. For other things like preface, do it manually
+% with something like \newpage\section*{Preface}.
+
+% This is an additional page (do not hand it in at the library) to print
+% boxed-in title, author and degree statement so that they are visible through
+% the opening in BU covers used for reports. This makes a nicely bound copy.
+
+%\buecethesistitleboxpage
+
+% Make the titlepage based on the above information.  If you need
+% something special and can't use the standard form, you can specify
+% the exact text of the titlepage yourself.  Put it in a titlepage
+% environment and leave blank lines where you want vertical space.
+% The spaces will be adjusted to fill the entire page.
+\maketitle
+
+% The copyright page is blank except for the notice at the bottom. You
+% must provide your name in capitals.
+
+\copyrightpage
+
+% Now include the approval page based on the readers information
+
+\approvalpage
+
+% The acknowledgment page should go here. Use something like
+
+\newpage
+
+\section*{Acknowledgments}
+I am pleased to thank my research advisor Prof.\ William Klein for his support and guidance throughout the time I have spent at Boston University. His guidance has been useful in the introduction of and evaluation of research topics. The academic freedom that was fostered through his guidance has allowed for exposure into disparate topics in physics, computer science, and mathematics. I would like to acknowledge the help from  Prof.\ Harvey Gould in graciously and meticulously adding input in the drafting process of this thesis and other documents. I have been exposed to a lifetime's worth of puns due to Harvey and Bill. I would also like to acknowledge the helpful discussions with collaborators that resulted in interesting feedback for this work from Kang Liu, Nicholas Lubbers, Tyler Xuan Gu, and Rashi Verma. 
+
+I would like to thank the Physics department and the administrative staff including Mirtha Cabello for guidance through the administrative process of the university and program. Professor Pankaj Mehta's support as a second reader and feedback during presentations and meetings has allowed  exposure to interesting areas in the cross section of statistical mechanics, probability theory, and statistical inference.
+
+Lastly, I would like to acknowledge the encouragement of my parents Vilma Silva and Jaime Silva throughout my graduate studies despite residing thousands of miles away. 
+
+% The abstractpage environment sets up everything on the page except
+% the text itself.  The title and other header material are put at the
+% top of the page, and the supervisors are listed at the bottom.  A
+% new page is begun both before and after.  Of course, an abstract may
+% be more than one page itself.  If you need more control over the
+% format of the page, you can use the abstract environment, which puts
+% the word "Abstract" at the beginning and single spaces its text.
+
+\begin{abstractpage}
+The role of heterogeneity in two \lr\ systems is explored with a focus on the interplay of this heterogeneity with the component system interactions. The first will be the \het\ Ising model with \lr\ interactions. Earthquake fault systems under \lr\ stress transfer with varying types of heterogeneity will be the second system of interest. 
+
+First I will review the use of the intervention method  to determine the time and place of nucleation and extend its use as an indicator for spinodal nucleation. The \het\ Ising model with fixed magnetic sites will then be reformulated as a dilute random field Ising model. This reformulation will allow for the application of spinodal nucleation theory to the \het\ Ising model by correcting the spinodal field and the critical exponent $\sigma$ describing the critical behavior of clusters in spinodal nucleation theory. The applicability of this correction is shown by simulations that determine the cluster scaling of the nucleating droplets near the spinodal. Having obtained a reasonable definition of the saddle point object describing the nucleation droplet, the density profile of the nucleating droplet is measured and deviations from  homogeneous spinodal nucleation are found due to the excess amount of sparseness in the nucleating droplet due to the heterogeneity.
+
+Earthquake fault systems are then introduced and a connection is shown of two earthquake models. Heterogeneity is introduced in the form of asperities with the intent of modeling the effect of hard rocks  on  earthquake statistics. The asperities are observed to be a crucial element in explaining the behavior of aftershocks resulting in Omori's law. A second form of heterogeneity is introduced by coupling the \ofc\ model to an invasion percolation model for the purpose of modeling an earthquake fault system undergoing hydraulic fracturing. The ergodicty and event size statistics are explored in this extended model. The robustness of the event size statistics results are explored by allowing for the dissipation parameter in the \ofc\ model to vary.
+
+\end{abstractpage}
+
+% Now you can include a preface. Again, use something like
+% \newpage\section*{Preface} followed by your text
+
+% Table of contents comes after preface
+\tableofcontents
+
+% If you have tables, uncomment the following line
+\listoftables
+
+
+% If you have figures, uncomment the following line
+\newpage\listoffigures
+
+% List of Abbrevs is NOT optional (Martha Wellman likes all abbrevs
+% listed)
+% For mathematics a list of symbols is perhaps more appropriate, but
+% fulfills the same role
+% If your list is longer than one page, use the ``longtable'' package
+% Just \usepackage{longtable} and then replace the word ``tabular'' 
+% with ``longtable''.  You may have to download this package from
+% CTAN or another internet source.
+\chapter*{List of Symbols}
+  \begin{tabular}{lp{0.75\textwidth}}
+    $\alpha$ \dotfill & Dissipation parameter for the \ofc\ model \\
+    $\eta$ \dotfill &  Noise term for residual stress in \ofc\ model  \\
+    $\tau$ \dotfill & Scaling exponent in Fisher scaling relation\\
+    $\sigma$ \dotfill & Scaling exponent in Fisher scaling relation \\
+    $\lambda$ \dotfill & Hydraulic fracturing stress failure threshold ratio \\
+    $\chi $ \dotfill &  Isothermal susceptibility   \\
+    $\gamma$ \dotfill & Scaling exponent in  isothermal susceptibility  \\
+    $\beta$ \dotfill & Scaling exponent in order parameter  \\
+    $R$ \dotfill & Interaction range parameter  \\
+    $J$ \dotfill & Coupling constant  \\
+  \end{tabular}
+
+% END OF THE PRELIMINARY PAGES
+\newpage
+
+\endofprelim

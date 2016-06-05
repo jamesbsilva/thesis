@@ -1,0 +1,103 @@
+% !TEX root = jbsilvaThesis.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{appendices}
+\chapter{\label{chp:noise_intv}Classifying monotonic runs in noisy runs}
+\begin{figure}
+      \includegraphics[scale=1.25]{Figures/intervention_ising/{IntervSuccessData-T-1.0844444444445-h-0.285-J-1.0-L-120-R-0-4645191778536961024nofit}.pdf}
+  \captionof{figure}{ Droplet growth percentage with monotonic behavior in nearest neighbour Ising system}
+  \label{fig:droplet0}
+\end{figure}
+
+An important question is how one should classify a nucleation trajectory as being monotonic in intervention success probability data which may contain noise across systems with varying amounts of Monte Carlo steps in traversing the nucleation barrier. A first step was to determine the Monte Carlo step number for the start and end of the traversal across the barrier by measuring the first time for the intervention success probability to cross two threshold in the success probability. In this particular work the thresholds at $5\%$ and $10\%$ success probabilities were used. The intervention trajectory time was then rescaled by the time scale to cross the nucleation barrier by taking the difference in the times to cross the thresholds. Once a rescaled time is obtained the success probability data can then be coarse grained in a consistent way. This particular work used a coarse graining factor of $6$. The benefit of this coarse graining step is in helping distinguishing biased noised present in a non-monotonic intervention data set to the unbiased noise possibly present in a monotonic intervention trajectory. 
+
+Once the intervention data was rescaled and coarse grained a simple classifier can be used to distinguish a monotonic intervention trajectory from that of a non-monotonic trajectory. A $\chi^2$ threshold can be used on a sigmoid fit or a threshold on the consecutive success probability time difference can be used. The latter measure with a threshold below $-0.2$ has the benefit of being computationally faster as well as effective. This classifier has properly classified the nearest neighbour as non monotonic as well as the non-monotonic \lr\ trajectories.
+
+\end{appendices}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The back matter
+
+\sectionfont{\fontsize{24}{22}\selectfont}
+% If you don't write the journal names out in full in the bibliography
+% then you need a list of journal abbreviations
+% If your list is longer than one page, use the ``longtable'' package
+% Just \usepackage{longtable} and then replace the word ``tabular'' 
+% with ``longtable''.  You may have to download this package from
+% CTAN or another internet source.
+\newpage
+
+\mychapter{0}{List of Journal Abbreviations}
+
+\begin{center}
+
+\begin{tabular}{lp{0.56\textwidth}}
+
+Adv. Phys.\dotfill & Advances in Physics  \\
+Ann. Phys. \dotfill & Annals of Physics \\
+Bull. Seismol. Soc. Am. \dotfill & Bulletin of the Seismological Society of America \\
+
+Geophys Res. Lett \dotfill & Geophysical Research Letters \\
+
+J. Aerosol Sci. \dotfill & Journal of Aerosol Science\\
+J. Chem. Phys \dotfill & The Journal of Chemical Physics \\
+J. Phys A: Math Gen \dotfill & Journal of Physics A: Mathematical and General \\
+
+Phys. Rev. E \dotfill & Physical Review E \\
+Phys. Rev. Lett. \dotfill & Physical Review Letters \\
+
+Trans. Connect. Acad. Sci. \dotfill & Transactions of the Connecticut Academy of Arts and Sciences \\
+
+\end{tabular}
+\end{center}
+
+\mychapter{0}{Bibliography}
+% The bibliography itself can be single spaced
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{jbsilvaThesis.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% finally you must include your cv.  You can do that whatever way you
+% like including by formatting it in a totally different program.
+
+% If you would like to grab it from some other source then be sure the
+% page numbering is consecutive with the end of the bibliography and
+% be sure it appears on the table of contents by adding a line such as
+%  \addcontentsline{toc}{chapter}{Curriculum Vitae}
+
+% If you would like to include it directly you could use the commands
+% in the below example
+\newpage
+\mychapter{0}{Curriculum Vitae}
+\begin{category}{Contact}
+\citemnobullet James B. Silva
+\citemnobullet Department of Physics, Boston University, 590 Commonwealth Avenue, Boston, MA  02215, USA
+\end{category}
+
+\begin{category}{Education}
+\citem{Massachusetts Institute Of Technology}, B.Sc.,  September 2004 -- June 2008.
+\citem{Boston University}, M.A, Physics, September 2009 -- February 2011.
+\citem{Boston University} PhD candidate,  September 2009 -- present.
+  Thesis advisor: William Klein.
+\end{category}
+
+\begin{category}{Talks}
+ \citem{} December 2015, Department Seminar, “Defining an Energy in the OFC model,”  Boston University
+ \citem{} October 2014, contributed talk, “Defining an Energy in the OFC model,” Greater
+Boston Area Statistical Mechanics Meeting, Brandeis University
+ \citem{} October 2013, Preliminary Exam, “Heterogeneous nucleation in the long-range Ising model,”  Boston University
+ \citem{} March 2014, contributed talk, “Spinodal nucleation effects in heterogeneous systems with \lr interactions,” American Physical Society March Meeting, Denver Colorado
+\end{category}
+
+%\begin{category}{Publications}
+%\citemenum John Famous and Example Student, \emph{A special case of a
+%  well known conjecture}. Fancy Math. J. \textbf{46} no. 3 (2007),
+%  473-490.
+%\end{category}
+
+

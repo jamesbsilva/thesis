@@ -1,0 +1,128 @@
+% !TEX root = jbsilvaThesis.tex
+
+\chapter{\label{chp:frack}Earthquake Fault Systems Undergoing Hydraulic Fracturing}
+
+\section{Invasion Percolation}
+
+Hydraulic fracturing is the result of the injection of highly pressurized liquid into rocks. To model this process the results from previous models of fluids that displace each other in a porous medium under capillary forces will be invoked. My goal is to understand how fracturing can lead to greater earthquake activity.
+
+In 1983 Wilkinson and Willemsen introduced the invasion percolation model for the propagation of an oil-water interface in porous media~\cite{wilk83}. In this model a system of random pores is generated and an initiator (injection) site is chosen. The oil-water interface then propagates through the pores with the lowest capillary force along the oil-water interface. The spanning length of the resulting oil-water interface shows fractal-like behavior such that the mass of a cluster scales with its radius of gyration  with an exponent less than the spatial dimension. This model for the ``fracking" fluid can result in a fractal-like propagation of the oil-water interface.
+
+Invasion percolation proceeds by assigning random numbers to the $N$ sites  representing the inverse of the capillary force at the sites. If the  fracturing process is coupled with the stress in the \ofc\ model,  these random numbers  will also  be the initial   stress at each site. If the stress and capillary force are not coupled, the collection of random numbers is fixed (quenched). The process begins by choosing the injection site to be at the center of the \ofc\ model. The invasion percolation process if given by the following:
+\begin{itemize}
+	\item The nearest neighbor site with the maximum random number is chosen as the site for the oil-water interface to propagate.
+	
+	\item The nearest neighbors of all sites with the oil-water interface  are added to the set of possible locations for the oil-water interface to propagate in the next step.
+		
+	\item If the set of possible oil-water interface  sites is empty, then the process is completed; otherwise, return to step 2. 
+\end{itemize}  
+%%
+The beginning and end of the  fluid propagation is dictated by the  time scale $\tau_{\rm frack}$ which will be distinguished from the time scale for the earthquake fault system itself. The number of  fluid propagation steps that occur from beginning to end of the fracking fluid step is given by $N_{\rm frack}$.
+
+\section{Models for Earthquake Fault System Undergoing Hydraulic Fracturing}
+
+\subsection{Earthquake faults and hydraulic fracturing}
+
+As discussed, the cellular automaton introduced by Olami, Feder, and Christensen~\cite{ofc92} has identical dynamics to the block spring model introduced by Rundle, Jackson, and Browne~\cite{rjb77} for the stress variable. In this block-spring model an earthquake event is initiated by a slip of a block due to the stress exceeding a predefined threshold. This slip initiates an avalanche because a slip event can creates a slip  in a neighboring block. 
+
+The novel ingredient in modeling earthquake faults undergoing hydraulic fracturing is  the increase in the ease  that a  site slips when it is ``fracked" by the fluid mixture. This ease of slipping when a site interacts with the fluid is parametrized by the  parameter $ \lambda $, which reduces the failure threshold when exposed to the fluid mixture. 
+
+In brief, the model is defined by a parameter for the time scale,  $\tau_{\rm frack}$, the number of steps, $N_{\rm frack}$, in the hydraulic process relative to the earthquake fault model,  the parameter $\lambda$ for the modification of the stress failure threshold by the fluid mixture, and a  decision of either quenching the distribution of pores or allowing the pores to be dynamic. If there is no interaction with the hydraulic process, then the failure threshold for a fracked site $\widetilde{\sigma}_{\rm fail}$ is given by Eqn.~\eqref{eqn:frackedasper}, where $\widetilde{\sigma}_{\rm fail,0}$ is the initial stress failure threshold, and $\Delta \sigma$ is the difference between the failure stress threshold and the residual stress. In this model fail (slip) events in a fracked site are helped by the fluid resulting in a lower failure threshold.  %%
+%%
+\begin{equation}
+\widetilde{\sigma}_{\rm fail} = \widetilde{\sigma}_{\rm fail,0} - \lambda  \Delta \sigma.
+  \label{eqn:frackedasper}
+\end{equation}  %%
+%%
+If there is a coupling between the hydraulic fracturing and the earthquake fault, then the failure threshold is given by Eqn.~\eqref{eqn:frackedaspercoup}. In this  form the stress at site  $j$  at the time of fracking will couple to determine the failure threshold.   %%
+%%%%
+%%
+\begin{equation}
+\widetilde{\sigma}_{\rm fail} = \sigma_{\rm fail,0} - \lambda  ( 1 -\sigma_j)  \Delta \sigma.
+  \label{eqn:frackedaspercoup}
+\end{equation}%%
+%%
+%%
+The process for the hydraulic fracturing model is contrasted with the \ofc\ model by the following:   %%
+%%
+\begin{itemize}
+	\item Lattice of sites with stress $\sigma_j$ at site $j$.
+	\item The system is evolved using an \ofc\ model with failure thresholds modified by Eqn.~\eqref{eqn:frackedaspercoup} or Eqn.~\eqref{eqn:frackedasper} if a site has been fracked.
+	\item After a fixed hydraulic fracturing time scale an invasion percolation process is initiated for $N_{\rm frack}$ steps and the failure threshold is reassigned to the fracked value. If the stress system is coupled to the fracking process, then the capillary force is modified. 	
+	\item If all sites are fracked, then the simulation ends; otherwise, the system continues from the \ofc\ step evolution. 	
+\end{itemize}  %%
+%%
+%%
+%%
+\begin{figure}[!h]
+    \centering
+      \includegraphics[scale=1.0]{Figures/fracking/{Frack-alpha-0.05-lambda-100-noise-100-fail-2-percT-10000-percN-500-QuenchPercLink-CountBroken-L-160-R-10-thresh-1500}.pdf}
+    \caption{The number of large events above $250$ sites for $\lambda=0.1$ and $\alpha=0.05$ as the fracking process evolves, normalized by the number of events in the unmodified system. An excess of events occurs for events of size 250 and up to near 500.}
+  \label{fig:frack_10}
+\end{figure}  %%
+%%
+%%
+%%
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=1.0]{Figures/fracking/{Frack-alpha-0.05-lambda-800-noise-100-fail-2-percT-10000-percN-500-QuenchPercLink-CountBroken-L-160-R-10-thresh-1500}.pdf}
+    \caption{The number of large events above $250$  for $\lambda=0.8$ and $\alpha=0.05$ as the  fracking process evolves, normalized by the number of events in the unmodified system. An excess of events occurs for events of size 250 and up to near 500.}
+  \label{fig:frack_80}
+\end{figure}  %%
+%%
+%%
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Event Size Statistics}
+
+In the following the  parameters are given by $\sigma_{\rm residual}=1.0$, $\sigma_{\rm fail}=2.0$, $\eta=0.1$, $L=160$, $R=10$, and $\tau_{\rm frack}=10^4$. The initial value of $\alpha$ is given by $0.05$ and $N_{\rm frack}=250$. To explore the statistics of events in the hydraulic fracturing process, the number of events above a threshold are counted as the fracturing process evolves. In Fig.~\ref{fig:frack_10} an event threshold is varied for $\lambda=0.1$ for  hydraulic fracturing  with no coupling between the stress failure threshold and quenched hydraulic fracturing sites. In a typical \ofc\ system the likelihood of an event decreases as the size of the event increases, so that events of size $500$ and greater are increasingly unlikely.  
+
+It is observed in Fig.~\ref{fig:frack_10} that as the hydraulic fracturing process is initialized, the number of extremely large events is decreased while mid-large events are increased in frequency. This relation eventually stabilizes before a fifth of the system is able to undergo the hydraulic fracturing process. To establish how sensitive the excess of events is to the value of $\lambda$, the value of $\lambda$ must be varied.
+
+
+In Fig.~\ref{fig:frack_80} the increase of mid-large events in the fracking process is observed for $\lambda=0.8$. Similar behavior was observed for $\lambda=0.5$.  As expected, the fracking process is observed to have a smaller effect relative to the unfracked system as $\lambda=1$ is approached.
+
+The number of fracturing steps was halved to explore the effect of the time scale and number of  fracturing steps occurring for a given process. Figure~\ref{fig:frack_250} shows that the dampening effect on the size of an event is increased for a slower  fracturing process.   %%
+%%%%
+%%
+\begin{figure}[!h]
+    \centering
+      \includegraphics[scale=1.0]{Figures/fracking/{Frack-alpha-0.05-lambda-500-noise-100-fail-2-percT-10000-percN-250-QuenchPercLink-CountBroken-L-160-R-10-thresh-1500}.pdf}
+    \caption{The number of  events above $250$  for $\lambda=0.5$ and $\alpha=0.05$ as the fracking process evolves, normalized by the number of events in the unmodified system. An excess of events occurs for events of size 250 and up to near 500.}
+  \label{fig:frack_250}
+\end{figure}  %%
+%%
+Of interest is the behavior as $\alpha$ is changed toward the scaling regime. In Fig.~\ref{fig:frack_alph} it is observed that a small but significant bump in the rate of all events is observed at the very initial stage of the fracturing, but the increase in the number of large events is followed by a dampening of events immediately after more fracking steps.   %%
+%%%%
+%%
+\begin{figure}[!h]
+    \centering
+      \includegraphics[scale=1.0]{Figures/fracking/{Frack-alpha-0.01-lambda-500-noise-100-fail-2-percT-10000-percN-250-QuenchPercLink-CountBroken-L-160-R-10-thresh-1500}.pdf}
+    \caption{The number of  events above $250$  for $\lambda=0.5$ and $\alpha=0.01$ as the fracking process evolves, normalized by the number of events in the unmodified system. An excess of events is observed early in the fracking process for all larger events in this system with smaller $\alpha$.}
+  \label{fig:frack_alph}
+\end{figure}  %%
+%%%%
+%%
+\subsection{Applicability across fault systems}
+
+If a system is ergodic, the time average for a single realization is equivalent to the ensemble average of the same  system. The Thirumalai-Mountain (TM) metric given in  Eqn.~\eqref{eq:tmmetric} was measured for the  fracturing systems. Figure~\ref{fig:frack_metric_quench} displays the the inverse  metric for a quenched system with $9.9\%$ of the  possible bonds having undergone fracking. The figure confirms that the system is not ergodic as it does not satisfy the necessary but not sufficient linear behavior for an ergodic system.   %%
+%%%%
+%%
+\begin{figure}[!h]
+    \centering
+      \includegraphics[scale=0.25]{Figures/fracking/{Metric-99}.png}
+    \caption{The inverse  metric for quenched a fracked system with $L=120$, $R=10$, and $\alpha=0.1$. Linear behavior of the inverse metric is a necessary condition for ergodicity.}
+  \label{fig:frack_metric_quench}
+\end{figure}%%
+%%%%
+%%
+A similar result is observed in Fig.~\ref{fig:frack_metric_coup}, which displays the  metric for a coupled fracked system with $42.0\%$ of the possible bonds having undergone fracking. %%
+%%%%
+%%
+\begin{figure}[!h]
+    \centering
+      \includegraphics[scale=0.25]{Figures/fracking/{Metric-420}.png}
+    \caption{\label{fig:frack_metric_coup} The inverse metric for coupled fracked system with $L=120$, $R=10$, and $\alpha=0.1$.}
+\end{figure}%%
+%%
+This result is consistent across many realizations of the  fracturing models for both coupled and quenched  fracturing bonds. The breakdown in ergodicity is not surprising given the many realizations of the hydraulic fracturing process and the loss of homogeneity through the hydraulic fracturing process that creates sites where slip activity is more likely.

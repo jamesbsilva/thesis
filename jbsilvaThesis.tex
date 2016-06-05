@@ -1,0 +1,83 @@
+       %12pt according to http://www.bu.edu/library/files/2014/12/guide.pdf
+%
+%    TODO : Check figures stay within margins
+%
+%
+\documentclass[12pt]{report}
+
+%package for the bu thesis format
+\usepackage{bu_thesis}
+\usepackage[toc,page]{appendix}
+
+%put other packages you might need and custom declarations here
+\usepackage{amsmath}
+\usepackage[hang]{subfigure}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{caption}
+
+%harvey suggestions
+\usepackage{makeidx} 
+\usepackage{amsmath}
+\DeclareMathOperator\arctanh{arctanh}
+\usepackage{dcolumn}
+\usepackage{xr}
+\usepackage{cancel}
+\usepackage{needspace}
+\usepackage{relsize}
+\usepackage{sectsty}
+\usepackage{titlesec}
+
+\newcommand{\mychapter}[2]{
+    \setcounter{chapter}{#1}
+    \setcounter{section}{0}
+    \chapter*{#2}
+    \addcontentsline{toc}{chapter}{#2}
+}
+% better not to add space before }
+
+\newcommand{\ps}{pseudospinodal}
+\newcommand{\nd}{nucleating droplet}
+\newcommand{\lr}{long-range}
+\newcommand{\nn}{nearest neighbor}
+\newcommand{\sr}{short-range}
+\newcommand{\mf}{mean-field}
+\newcommand{\ofc}{Olami-Feder-Christensen}
+\newcommand{\rjb}{Rundle-Jackson-Browne}
+\newcommand{\bk}{Burridge-Knopoff}
+\newcommand{\het}{heterogeneous}
+\newcommand{\homo}{homogeneous}  
+
+    
+% currently working on
+%\includeonly{chapter3}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% pre chapters 
+\include{chapter0}
+% structure of dissertation 
+\include{chapter1}
+% introduction to nucleation and motivation
+\include{chapter2}
+% details for theory nucleation and spinodal indicators
+\include{chapter3}
+% work on heterogeneous pseudospinodal
+\include{chapter4}
+% work on heterogeneous nucleation
+\include{chapter5}
+% introduction to earthquake fault modeling with long range stress transfer 
+\include{chapter6}
+% work on asperities
+\include{chapter7}
+% work on fracking
+\include{chapter8}
+% conclusions and further work
+\include{chapter9}
+% appendix ,references etc
+\include{chapterZ}
+
+\end{document}

@@ -1,0 +1,37 @@
+% !TEX root = jbsilvaThesis.tex
+
+\chapter{\label{chp:intro_nuc}Introduction to Nucleation}
+
+Nucleation is the decay of a metastable state into a stable state. A common example of a nucleation process is the decay of a supercooled gas of water molecules by the formation of rain drops. Nucleation is classified into \homo\ and \het\ nucleation. Homogeneous nucleation occurs in the bulk of a pure system with no impurities, and \het\ nucleation occurs on an impurity or a surface.
+
+Present research on nucleation builds on the work of Josiah Willard Gibbs. Gibbs formalized an early understanding of the formation of crystals in a metastable liquid from a thermodynamic viewpoint~\cite{gibbs}. Research on the kinetics of nucleation was initiated by Becker and Doring~\cite{Becker} as well as by Turnbull and Fisher~\cite{Turnbull} in the 1930's and 1950's respectively. These theories applied in the regime where nucleation occurs with a relatively low probability, and there is a clear boundary between the phases as  discussed in   Chapter~\ref{chp:intro_nuc}. Research by Klein et al.~\cite{klein07} investigated nucleation in the spinodal nucleation regime where the conditions of a compact droplets are relaxed and the metastable state is pushed to its limit of stability. Langer explored pattern formation in the nucleation process~\cite{Langer}. 
+
+In the real world nucleation is largely \het. Researchers in fields such as metereology, materials science, and biology have discovered the importance of impurities in modeling nucleation processes. Recent example of this research on heterogenous nucleation include work on colloidal systems~\cite{engel11} and the Ising model~\cite{sear12}.  
+
+A simple  system  containing a phase transition and nucleating processes is an Ising model. By introducing defects or ``dirt'' into the Ising model, one can model systems undergoing \het\ nucleation. These types of models have many applications in real systems. Atmospheric physicists are interested in the role of dust on weather patterns. The importance of dust from Asian deserts has been suggested as an enhancer for precipitation formation in the Western United States locations like  California Sierra Nevada~\cite{prather13,kulmala13}. Biological systems are also vulnerable to the effects of nucleation because plants can be damaged by the unexpected formation of ice leading to agricultural damage~\cite{kalik12}.
+
+Phase transitions drive many processes in industrial applications. Hence the understanding of nucleation rates is of economic importance in these applications. The creation of large droplets of liquid can decrease the lifetime of industrial equipment such as fans and turbines where gases vulnerable to nucleation are present. The formation of large droplets in humid climates when painting an object using aerosol paint can lead to bad results which leads to customer dissatisfaction with these products \cite{finishing}.
+
+Nucleation has also been used to model other phenomena such as earthquake events on fault systems and financial crashes in financial networks. These studies are motivated by the insight that a system can be in a metastable state which will eventually transition to  another metastable state as can be observed in periods of booms and busts in financial networks~\cite{sornette_log}.
+
+By understanding the nucleation process the hope is to be able to better prepare for and control the decay of the metastable state which could lead to more favorable outcomes or other methods of mitigation in the real world scenarios discussed above.  
+
+Experimental results are a necessary component in holding physical theory accountable. Nucleation rates have been measured  by using methods which include a thermal diffusion cloud chamber, an expansion cloud chamber, a shock tube, and a supersonic nozzle~\cite{kalik12}. A thermal diffusion cloud chamber works by creating a temperature gradient in between two plates such that a liquid vaporizes in one plate and condenses in the other plate.  Light scattering is then used to measure the resulting nucleating droplets leading to a measurement of a nucleation rate.
+A shock tube or expansion tube uses the cooling nature of an expanding gas to induce nucleation, which can then be measured by light scattering as well.
+
+Experiments with the advent of video microscopy have been able to image nucleation events at the colloidal scale where the speed of the nucleation process and the size of the nucleating droplet allows nucleation to be observed.   Wang et al.~\cite{wang12} have shown that these nucleation results deviate from the results expected by classical nucleation theory,  will be introduced in Chapter~\ref{chp:intro_nuc}.
+
+\section{Mean-Field Systems}
+
+Understanding the the effect of interactions has been a continuing goal for many years. Mean-field theory is an example of the success of simplifications. A simple example of the application of \mf\ theory is to magnetic systems. 
+
+A magnet can be described as a collection of particles with a magnetic moment. Due to the electro-magnetic forces these particles interact with each other. The effects of these interactions are simplified in \mf\ theory by assuming a given particle feels the average field resulting from its interaction with its neighbors. By using this simplification we can obtain approximations for quantities such as the critical temperature and critical exponents. An example of this is the critical exponent for the correlation length. Mean-field predicts the following relation for the correlation length $\xi$ and the distance from the critical temperature $\tau=\frac{T-T_c}{T}$. %%
+%%
+\begin{equation}
+\xi \propto \tau^{-\nu},
+\end{equation}
+%%
+The \mf\ value of the critical exponent $\nu = \frac{1}{2}$.  For comparison, $\nu$ for the 4He superfluid transition is $\nu \approx 0.67$~\cite{lipa03}. This result shows that there are limitations to the \mf\ approach. The accuracy of \mf\ theory have been shown to depend on the number of interacting particles with a given particle~\cite{penleb}. In addition \mf\ theory has been shown to be exact for dimensions above the \textit{upper critical dimension}. In the Ising model this upper critical dimension is four. Similarly physical systems have been shown to exhibit near \mf\ behavior when the interactions are of sufficient \lr\ so that a given particle interacts with a large enough amount of particles. The relation of the interaction range and \mf\ was explored by Kac~\cite{kac} and studied by Klein et al.~\cite{klein07}. Physical systems such as colloids and earthquake faults have effective \lr\ interactions and exhibit behavior expected of \mf\ systems.
+
+A point of focus in this thesis will be a nucleation under conditions described as spinodal nucleation. Spinodal nucleation occurs for deep quenches where high supersaturations are occurring such that the metastable state is near its limit of metastability. The spinodal  is only well defined for \mf. For finite but long interactions ranges the system is near \mf\ such that a \ps\ is defined instead of a spinodal. In this region nucleation droplets are not compact droplets that one classically associates with a nucleating droplet, but rather the droplets are sparse fractal-like objects with properties to be defined in Chapter~\ref{chp:nuc_details}. 
+

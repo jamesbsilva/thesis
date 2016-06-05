@@ -1,0 +1,136 @@
+% !TEX root = jbsilvaThesis.tex
+
+\chapter{\label{chp:asper}Asperities: A step toward understanding the nature of aftershocks}
+
+\section{Introducing Asperities to the OFC model}
+
+The introduction of asperities to the \ofc\ model was performed by defining the number, location, and strength of the asperities in a given realization of the model. The asperities  were chosen to be spatially non-uniform and randomly distributed across the system with a stress failure threshold sampled from a Gaussian distribution of a given variance and  mean that is chosen to always be above the failure threshold of a  non-asperity site. The system was evolved for $10^6$ plate updates to ensure that the system is not  in the transient state. Once the system is assured to be outside the transient, state the size of the events was measured. 
+
+The mean size of events for a homogeneous \ofc\ model was measured to provide a baseline. If Omori's law is to be observed, it is expected that the number of events whose size is above the baseline size will satisfy the relation  in Eqn.~\eqref{eq:omori}. The common parameters used in this work include the linear dimension  $L=120$, a \lr\ stress transfer range $R=10$, dissipation constant $\alpha=0.01$, regular site stress failure threshold $\sigma_{\rm fail}=100.0$, residual stress $\sigma_{\rm res}=10.0$, and residual noise $\eta=5.0$.
+
+
+\section{Asperities and Omori's Law}
+\subsection{ A single asperity }
+% Focus here is showing that an asperity can cause periodicity in the failure of asperity sites and memory in stress/failure sites distribution 
+
+Introducing a single asperity to the \ofc\ model is the simplest implementation of an asperity. This single asperity also allows for the isolation of asperity effects that do not have asperity-asperity interactions. The introduction of an asperity appears to result in two effects -- periodicity in asperity slip events and a stress ``memory" imprinted by the asperity slip event. 
+
+Periodicity in the number of plate updates until an asperity failure is expected due to the high failure threshold of an asperity. This periodicity was confirmed for a single asperity that is $500$ times the strength of a non-asperity site. For this asperity the measured time between failures of the asperity site was determined to be $84507.26 \pm 30.67$ plate updates; the standard deviation is less than $1\%$ of the mean time to failure. 
+
+As introduced in Chapter~\ref{chp:intro_quakes} a site   increases its stress by two mechanisms: a  loading of all sites  by the loader plate movement, and a secondary loading mechanism of a smaller amount of stress due to the redistribution of stress from a neighboring site undergoing a slip. The small variance in the failure times must be due to small and random stress obtained from the secondary loading mechanism resulting from the stress distributed during a slip event.
+
+The  ``memory" can be observed by measuring the stress distribution as a function of the distance from the initiating asperity site before the asperity slip and after. In Fig.~\ref{fig:stress1000} this distribution is found for a single asperity that is $1000$ larger than the failure threshold of a non-asperity site. This memory-like  property of the large asperity   suggests a similar effect on the large event rate. Applying the observed damped sinusoidal form of the frequency of large event rate to modify Omori's law results in Eqn.~\eqref{eq:omorismod}.    %%
+%%
+\begin{equation}
+	\label{eq:omorismod}
+	n(t) = \frac{k}{(t+C)^p} + A e^{-\lambda t} \sin{(\omega t)}
+\end{equation}  %%
+%%
+\begin{figure}[!h]
+    \centering
+      \includegraphics[scale=1.1]{Figures/asperities/{AvgStressDR-2.0-asper-1000}.pdf}
+    \caption{The average stress as a function of the distance from the asperity failure site for a single asperity of size $1000$ times the non-asperity strength.}
+  \label{fig:stress1000}
+\end{figure}  %%
+%%
+%%
+%%
+\begin{figure}[!h]
+    \centering
+      \includegraphics[scale=1.1]{Figures/asperities/{AvgStressDR-2.0-asper-4000}.pdf}
+    \caption{The average stress as a function of distance from the failure site for a single asperity $4000$ times the non-asperity strength }
+  \label{fig:stress4000}
+\end{figure}  %%
+%%%%
+%%
+The role of the asperity  was explored by increasing the strength of the asperity to $4000$ greater than the non-asperity failure threshold. Figure~\ref{fig:stress4000} displays the site stress distribution for this larger asperity strength and shows a smaller dampening term in Eqn.~\eqref{eq:omorismod} as well as a smaller period. This result suggests the dependence of asperity strength for the dampening coefficient and period in Eqn.~\eqref{eq:omorismod} as the number of low and high stress areas increases with the asperity strength. 
+
+The dissipation of the memory was explored by keeping track of the stress distribution over the amount of plate updates. A system with a single asperity $400$ times the regular stress threshold was simulated over many asperity slip events. In Fig.~\ref{fig:stress_mem_prop} the resulting propagation and dissipation of the stress distribution is observed over  $500$ plate updates. In Sect.~\ref{asperasperinter} results will be presented to show that the dissipation of the stress memory at a site does not begin until plate updates of the order of thousands have occurred by measuring the large event rate. 
+
+\begin{figure}[!h]
+    \centering
+      \includegraphics[scale=1.1]{Figures/asperities/{AvgStressDR-1.0-asper-400.0-t-0-500.0}.pdf}
+    \caption{The average stress as a function of distance from the failure site for a single asperity $400$ times the non-asperity strength right after the asperity slip and after 500 plate updates.}
+  \label{fig:stress_mem_prop}
+\end{figure}  %%
+%%%%
+%%
+
+\subsection{Asperity-asperity interactions}
+\label{asperasperinter}
+
+Increasing the number of asperities sites allows asperity-asperity interactions and asperity to non-asperity interactions to be explored.
+
+To probe Omori's law with several asperities the number of large events is measured as a function of real time. The real time scale is assumed to be proportional to the amount of stress added to the system, and the implied plate velocity is constant. The baseline size of events was determined from calculating the mean event size in a system with no asperities. A large event is  classified as an event that is above $25.0$ times  the baseline event size. If Omori's law is present, the large event rate should fit Eqn.~\eqref{eq:omorismod}. The measurement of the large event rate is initiated by an asperity slip event. Any other asperity slip event within the large event rate time window resets the time scale. 
+
+In Fig.~\ref{fig:omori500_50} we see the result of the large event rate measurement for one asperity with a stress failure threshold $500$ times greater than the non-asperity failure threshold. No strong Omori's law-like behavior is observed nor is there a large change in event statistics observed after an asperity slip event.    %%
+%%
+%%
+%% 
+\begin{figure}[!h]
+    \centering
+      \includegraphics[scale=0.925]{Figures/asperities/realTime/{OmoriLawS-AsperStd-5000.0-AsperMu-50000.0-asperN-1-realTime-threshMult-25.0_log}.pdf}
+    \caption{The large event rate for a single asperity $500$ times the value of $\sigma_F$. No Omori's law-like behavior is observed. }
+  \label{fig:omori500_50}
+\end{figure} %%
+%%
+In Fig.~\ref{fig:omori500_5} the large event rate for $125$ spatially uniformly distributed asperities with a stress failure threshold given by a Gaussian distribution with $\mu=500.0\sigma_F$ and $\mbox{std}=0.5\sigma_F$. The system begins to display modified Omori's law-like behavior as in Eqn.~\eqref{eq:omorismod}. 
+Figure~\ref{fig:omori50_12} shows the result for a much lower variance in the asperity strength $\mu=50.0\sigma_F$ and $\mbox{std}=0.005\sigma_F$. The large event rate behavior displays no discernable Omori's law or any other simple functional behavior.  %%
+%%
+\begin{figure}[!h]
+    \centering
+      \includegraphics[scale=0.9]{Figures/asperities/realTime/{OmoriLawS-AsperStd-50.0-AsperMu-50000.0-asperN-125-realTime-threshMult-25.0_log}.pdf}
+   \caption{The large event rate for $\mu=500.0\sigma_F$ and $\mbox{std}=0.5\sigma_F$ displaying the modified Omori's law form from Eqn.~\eqref{eq:omorismod}.
+   }
+   \label{fig:omori500_5}
+\end{figure} %%
+%%
+%%
+%%
+\begin{figure}[!h]
+    \centering
+      \includegraphics[scale=0.9]{Figures/asperities/realTime/{OmoriLawS-AsperStd-0.5-AsperMu-5000.0-asperN-125-realTime-threshMult-25.0_log}.pdf}
+   \caption{The large event rate for $\mu=50\sigma_F$ and $\mbox{std}=0.005\sigma_f$ resulting in a breakdown in the modified Omori's law from Eqn.~\eqref{eq:omorismod}. }
+   \label{fig:omori50_12}
+\end{figure}  %%
+%%
+
+
+Table~\ref{tbl:powerexp} summarizes the measured exponent in Eqn.~\eqref{eq:omori} for the various asperities.  %%
+
+\begin{table}[!ht]
+\centering
+	\begin{tabular}{| l || c | r | c| c|}
+	\hline
+	$N_{\rm asper}$    & $\mu_{\rm  asper}$ & $\mbox{std}_{\rm asper}$ & $p_{\rm Omoris}$ & $p_{Omoris+sine}$ \\
+	\hline
+	1  & 50,000   & 5,000 & 0.080 & 0.073 \\
+	1  & 500,000   & 25,000 & 0.123 & 0.13 \\
+	10  & 500,000   & 25,000 & 0.703 & 0.525 \\
+	50  & 50,000   & 5,000 & 0.27 & 0.540 \\
+	125  & 5,000   & 1 & 6.65 & 2.19 \\
+	125  & 5,000   & 1,000 & 84.64 & 2.39 \\
+	125  & 50,000   & 50 & 28.23 & 0.88 \\
+	125  & 50,000   & 5,000 & 61.08 & 10.65 \\
+	125  & 500,000   & 1,000 & 6.81 & 1.06 \\
+	125  & 500,000   & 5,000 & 15.95 & 9.86 \\
+	\hline
+	\end{tabular}
+  	\caption{Omori's law exponents. Multiple asperities with a variance in asperity strength are a key factor in Omori's law behavior.}
+	\label{tbl:powerexp}
+\end{table}  %%
+%%
+Comparison with the work on a single asperity shows that asperity-asperity interactions has an effect on the observation of Omori's law behavior. In particular, the oscillatory behavior for large failure thresholds can possibly be explained from the oscillatory effect of large asperities on the stress distribution near  an asperity failure. Previous work on Omori's law by Utsu et al.~\cite{utsu95}  provides context for the value of the exponent $p$ in earthquake fault systems to be in the neighborhood of $0.9$--$1.5$. This context provides confirmation of the necessity of including  the damped oscillation term in Eqn.~\eqref{eq:omorismod}. By correcting for this damped oscillation term the obtained Omori's law exponents gave more reasonable values.   
+
+
+The important finding is the behavior of the variance in the failure thresholds of the asperity sites. This variance appears to be closely related to the power law exponent for the Omori's law-like behavior. The need  of asperities as well a variance in the asperity failure  appears to be vital for Omori's law behavior. 
+
+The presence of Omori's law has been suggested in a multi-asperity \ofc\ system. However, it remains to be confirmed that the inclusion of many asperities does not destroy the presence of Gutenberg-Richter scaling in the modified \ofc\ model. In Fig.~\ref{fig:scaling_asper} $125$ asperities with stress failure thresholds drawn from a Gaussian with mean $500\sigma_F$ and standard deviation of $\sigma_F$ are incorporated in a modified \ofc\ model where the event size probability has been measured. This system is observed to show the same Gutenberg-Richter scaling that is observed in the regular \ofc\ model. This combination of Gutenberg-Richter scaling and Omori's Law leads to Bath's Law due to the work of Sornette and Helmstetter~\cite{sornette03}, further emphasizing the  importance of the inclusion of many asperities.
+%%
+\begin{figure}[!h]
+    \centering
+      \includegraphics[scale=0.9]{Figures/asperities/{SumSqHistEvt10L200-alph1-100-asperPer-5000000-noise-5000000}.pdf}
+   \caption{ Event size scaling for $\mu=500\sigma_F$ and $\mbox{std}=\sigma_F$. Scaling behavior is maintained despite the inclusion of 125 asperities. }
+   \label{fig:scaling_asper}
+\end{figure}  %%
+%%
