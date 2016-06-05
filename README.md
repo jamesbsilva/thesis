@@ -7,6 +7,10 @@ Title
 ------
 The Role of Heterogeneity In Long-Range Interacting Systems : From Nucleation to Earthquake Fault System
 
+Addons
+------
+There are various scripts to do various tasks like find and replace across multiple files or cleaning of unused images as well as compiling different font size versions. Progress metrics roughly calculate metrics like page and word count.
+
 
 Abstract
 ------
